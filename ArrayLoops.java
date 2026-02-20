@@ -36,7 +36,7 @@ public class ArrayLoops {
         // =========================
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter a number to search for: ");
+        System.out.print("Enter a number to search for(Enter 0 for next statement): ");
         // TODO: read target from user
         int target = scanner.nextInt();
 
@@ -44,30 +44,37 @@ public class ArrayLoops {
         int i = 0;
 
         while (i < numbers.length) {
-            if (numbers[i]
-            index = i;
-            break;
+            if (numbers[i] == target) {
+                index = i;
+                break;
+            }
+            i++;
         }
-        // TODO: Use a while loop to search for target in numbers.
-        // If found, set index = i and break.
+            // TODO: Use a while loop to search for target in numbers.
+            // If found, set index = i and break.
 
-        if (index != -1) {
-            System.out.println("Found " + target + " at index: " + index);
-        } else {
-            System.out.println("Number " + target + " not found in the array.");
+                if (index != -1) {
+                    System.out.println("Found " + target + " at index: " + index);
+                } else {
+                    System.out.println("Number " + target + " not found in the array.");
+                }
+
+
+            // =========================
+            // 3) DO-WHILE: Prompt until 0
+            // =========================
+            int input;
+            // TODO: Use a do-while loop.
+            // Prompt: "Enter a number (0 to exit): "
+            do {
+                System.out.println("Enter a number (0 to exit): ");
+                input = scanner.nextInt();
+                // Print: "You entered: <input>"
+                System.out.println("You entered: " + input);
+                // Stop when input == 0
+            }
+            while (input != 0);
+            System.out.println("Exited do-while input loop.");
+            scanner.close();
         }
-
-        // =========================
-        // 3) DO-WHILE: Prompt until 0
-        // =========================
-        int input;
-
-        // TODO: Use a do-while loop.
-        // Prompt: "Enter a number (0 to exit): "
-        // Print: "You entered: <input>"
-        // Stop when input == 0
-
-        System.out.println("Exited do-while input loop.");
-        scanner.close();
     }
-}
